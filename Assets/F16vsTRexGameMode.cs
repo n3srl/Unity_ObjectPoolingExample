@@ -38,6 +38,7 @@ public class F16vsTRexGameMode : MonoBehaviour
         {
             if (!m_Instances[i].active)
             {
+                //activate it
                 return m_Instances[i];
             }
         }
@@ -72,7 +73,7 @@ public class F16vsTRexGameMode : MonoBehaviour
 
             if (instance != null)
             {
-
+                instance.active = true;
                 do
                 {
                     float x_range = Random.Range(-5000, 5000) / 100.0f;
@@ -84,7 +85,7 @@ public class F16vsTRexGameMode : MonoBehaviour
                 } while (AreObjectsIntersecting(instance, m_Instances));
 
                 instance.GetComponent<Rigidbody>().velocity = DropVelocity;
-                instance.active = true;
+                
 
             }
         }
